@@ -45,7 +45,7 @@ export default defineConfig({
 
 ## Example
 
-With the example configuration above, and the `main.ts` will be generated:
+With the example configuration above, and the `pages.ts` will be generated:
 
 ```diff
 src/
