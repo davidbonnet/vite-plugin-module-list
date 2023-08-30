@@ -22,6 +22,8 @@ import moduleList from "vite-plugin-module-list";
 
 ## API
 
+[API documentation](./doc/README.md).
+
 The default exported function returns a regular Vite plugin object.
 
 ```js

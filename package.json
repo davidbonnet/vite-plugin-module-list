@@ -11,13 +11,16 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --project tsconfig.package.json",
-    "prepare": "npm run build",
+    "build:doc": "typedoc",
+    "prepare": "npm run build && npm run build:doc",
     "test": "tsc"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.5.0",
     "@types/node": "^20.5.7",
     "preact": "^10.17.1",
+    "typedoc": "^0.25.0",
+    "typedoc-plugin-markdown": "^3.16.0",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
   },

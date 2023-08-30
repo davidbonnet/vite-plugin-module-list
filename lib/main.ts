@@ -50,6 +50,9 @@ async function writeModuleList(
   );
 }
 
+/**
+ * Plugin options.
+ */
 export interface ModuleListOptions {
   /**
    * Path to the folder containing the modules to list.
@@ -71,6 +74,11 @@ export interface ModuleListOptions {
   formatOptions?: FormatOptions | false;
 }
 
+/**
+ *
+ * @param options See {@link ModuleListOptions}
+ * @returns A vite plugin that writes a module that dynamically imports modules found in a folder.
+ */
 export default function moduleList({
   rootPath = ".",
   outputPath = `${rootPath}/main.ts`,
