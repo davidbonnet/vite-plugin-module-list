@@ -2,6 +2,13 @@
   "name": "vite-plugin-module-list",
   "private": false,
   "version": "1.0.2",
+  "description": "Vite plugin that writes a module that dynamically imports modules found in a folder.",
+  "author": "David Bonnet <david@bonnet.cc>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davidbonnet/vite-plugin-module-list.git"
+  },
   "type": "module",
   "main": "./dist/main.js",
   "exports": {
