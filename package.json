@@ -21,6 +21,13 @@
     "doc",
     "lib"
   ],
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "module",
+    "generator",
+    "import"
+  ],
   "devDependencies": {
     "@preact/preset-vite": "^2.5.0",
     "@types/node": "^20.5.7",
