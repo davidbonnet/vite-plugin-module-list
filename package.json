@@ -15,6 +15,12 @@
     "prepare": "npm run build && npm run build:doc",
     "test": "tsc"
   },
+  "files": [
+    "dist",
+    "README.md",
+    "doc",
+    "lib"
+  ],
   "devDependencies": {
     "@preact/preset-vite": "^2.5.0",
     "@types/node": "^20.5.7",
