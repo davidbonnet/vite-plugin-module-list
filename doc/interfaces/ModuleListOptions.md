@@ -26,7 +26,7 @@ FormatOptions for the list of options.
 
 #### Defined in
 
-[main.ts:74](https://github.com/davidbonnet/vite-plugin-module-list/blob/a5b829c/lib/main.ts#L74)
+[main.ts:74](https://github.com/davidbonnet/vite-plugin-module-list/blob/e1e22e0/lib/main.ts#L74)
 
 ___
 
@@ -42,7 +42,7 @@ Path to the module into wich the module list is written.
 
 #### Defined in
 
-[main.ts:68](https://github.com/davidbonnet/vite-plugin-module-list/blob/a5b829c/lib/main.ts#L68)
+[main.ts:68](https://github.com/davidbonnet/vite-plugin-module-list/blob/e1e22e0/lib/main.ts#L68)
 
 ___
 
@@ -58,4 +58,4 @@ Path to the folder containing the modules to list.
 
 #### Defined in
 
-[main.ts:62](https://github.com/davidbonnet/vite-plugin-module-list/blob/a5b829c/lib/main.ts#L62)
+[main.ts:62](https://github.com/davidbonnet/vite-plugin-module-list/blob/e1e22e0/lib/main.ts#L62)

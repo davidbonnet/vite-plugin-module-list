@@ -32,4 +32,4 @@ A vite plugin that writes a module that dynamically imports modules found in a f
 
 #### Defined in
 
-[main.ts:82](https://github.com/davidbonnet/vite-plugin-module-list/blob/a5b829c/lib/main.ts#L82)
+[main.ts:82](https://github.com/davidbonnet/vite-plugin-module-list/blob/e1e22e0/lib/main.ts#L82)
