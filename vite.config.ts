@@ -14,6 +14,11 @@ export default defineConfig({
         trailingComma: "all",
       },
     }),
+    moduleList({
+      rootPath: resolve("src/icons"),
+      outputPath: resolve("src/icons.ts"),
+      mode: "named-static",
+    }),
     preact(),
   ],
   clearScreen: false,

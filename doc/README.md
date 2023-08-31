@@ -4,13 +4,49 @@ vite-plugin-module-list
 
 ## Table of contents
 
-### Interfaces
+### Type Aliases
 
-- [ModuleListOptions](interfaces/ModuleListOptions.md)
+- [Mode](README.md#mode)
+- [ModuleListOptions](README.md#modulelistoptions)
 
 ### Functions
 
 - [default](README.md#default)
+
+## Type Aliases
+
+### Mode
+
+Ƭ **Mode**: ``"full-dynamic"`` \| ``"named-static"``
+
+Generation mode:
+- `full-dynamic`: Every found module is listed in an array with a `{ path, module: () => import() }` object description, `module` being a callback that does a dynamic import.
+- `named-static`: Every found module has a reference of the same module name being re-exported.
+
+#### Defined in
+
+[main.ts:14](https://github.com/davidbonnet/vite-plugin-module-list/blob/8e28e1f/lib/main.ts#L14)
+
+___
+
+### ModuleListOptions
+
+Ƭ **ModuleListOptions**: `Object`
+
+Plugin options.
+
+#### Type declaration
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `formatOptions?` | `FormatOptions` \| ``false`` | Prettier options. If explicitely set to false, the code is not formatted. **`See`** FormatOptions for the list of options. |
+| `mode?` | [`Mode`](README.md#mode) | Specifies how the modules are listed and exported. **`Default Value`** ```ts "full-dynamic" ``` |
+| `outputPath?` | `string` | Path to the module into wich the module list is written. **`Default Value`** `${rootPath}/main.ts`. |
+| `rootPath?` | `string` | Path to the folder containing the modules to list. **`Default Value`** `"."` |
+
+#### Defined in
+
+[main.ts:88](https://github.com/davidbonnet/vite-plugin-module-list/blob/8e28e1f/lib/main.ts#L88)
 
 ## Functions
 
@@ -22,7 +58,7 @@ vite-plugin-module-list
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options` | [`ModuleListOptions`](interfaces/ModuleListOptions.md) | See [ModuleListOptions](interfaces/ModuleListOptions.md) |
+| `options` | [`ModuleListOptions`](README.md#modulelistoptions) | See [ModuleListOptions](README.md#modulelistoptions) |
 
 #### Returns
 
@@ -32,4 +68,4 @@ A vite plugin that writes a module that dynamically imports modules found in a f
 
 #### Defined in
 
-[main.ts:82](https://github.com/davidbonnet/vite-plugin-module-list/blob/e1e22e0/lib/main.ts#L82)
+[main.ts:120](https://github.com/davidbonnet/vite-plugin-module-list/blob/8e28e1f/lib/main.ts#L120)
