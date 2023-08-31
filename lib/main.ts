@@ -46,8 +46,12 @@ export type ModuleListOptions = {
  * Generation mode:
  * - `full-dynamic`: Every found module is listed in an array with a `{ path, module: () => import() }` object description, `module` being a callback that does a dynamic import.
  * - `named-static`: Every found module has a reference of the same module name being re-exported.
+ * - `named-static-no-extension`: Same as `named-static` except that imports do not include the file name extension.
  */
-export type Mode = "full-dynamic" | "named-static";
+export type Mode =
+  | "full-dynamic"
+  | "named-static"
+  | "named-static-no-extension";
 
 function generateModuleList(
   filePathList: string[],
@@ -84,6 +88,25 @@ function generateModuleList(
             0,
             filePath.lastIndexOf("."),
           )} } from ${formatValue(`./${relativeFilePath}`)}`;
+        })
+        .filter(Boolean)
+        .join("\n");
+      return `// ${COMMENT}\n${moduleList}`;
+    }
+    case "named-static-no-extension": {
+      const moduleList = filePathList
+        .map((filePath) => {
+          const filePathWithoutExtension = filePath.slice(
+            0,
+            filePath.lastIndexOf("."),
+          );
+          const relativeFilePath = relative(
+            outputRootPath,
+            resolve(rootPath, filePathWithoutExtension),
+          );
+          return `export { ${filePathWithoutExtension} } from ${formatValue(
+            `./${relativeFilePath}`,
+          )}`;
         })
         .filter(Boolean)
         .join("\n");

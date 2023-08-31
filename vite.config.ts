@@ -18,7 +18,7 @@ export default defineConfig({
       rootPath: resolve("src/icons"),
       includeExtensions: ["tsx"],
       outputPath: resolve("src/icons.ts"),
-      mode: "named-static",
+      mode: "named-static-no-extension",
     }),
     preact(),
   ],
