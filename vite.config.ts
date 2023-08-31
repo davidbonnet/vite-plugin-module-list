@@ -16,6 +16,7 @@ export default defineConfig({
     }),
     moduleList({
       rootPath: resolve("src/icons"),
+      includeExtensions: ["tsx"],
       outputPath: resolve("src/icons.ts"),
       mode: "named-static",
     }),

@@ -35,6 +35,7 @@ export default defineConfig({
     moduleList({
       rootPath: resolve("src/pages"),
       outputPath: resolve("src/pages.ts"),
+      includeExtensions: ["tsx"],
       formatOptions: {
         trailingComma: "all",
       },
@@ -51,9 +52,12 @@ With the example configuration above, and the `pages.ts` will be generated:
 src/
 + pages.ts
   pages/
+    A.css
     A.tsx
+    B.css
     B.tsx
     C.tsx
+    README.md
 ```
 
 It will contain:

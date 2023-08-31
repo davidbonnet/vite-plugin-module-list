@@ -19,7 +19,7 @@
     "dev": "vite",
     "build": "tsc --project tsconfig.package.json",
     "build:doc": "typedoc",
-    "prepare": "npm run build && npm run build:doc",
+    "prepare": "npm run build",
     "test": "tsc"
   },
   "files": [
