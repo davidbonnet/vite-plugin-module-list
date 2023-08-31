@@ -17,15 +17,16 @@ vite-plugin-module-list
 
 ### Mode
 
-Ƭ **Mode**: ``"full-dynamic"`` \| ``"named-static"``
+Ƭ **Mode**: ``"full-dynamic"`` \| ``"named-static"`` \| ``"named-static-no-extension"``
 
 Generation mode:
 - `full-dynamic`: Every found module is listed in an array with a `{ path, module: () => import() }` object description, `module` being a callback that does a dynamic import.
 - `named-static`: Every found module has a reference of the same module name being re-exported.
+- `named-static-no-extension`: Same as `named-static` except that imports do not include the file name extension.
 
 #### Defined in
 
-[main.ts:50](https://github.com/davidbonnet/vite-plugin-module-list/blob/88551b1/lib/main.ts#L50)
+[main.ts:51](https://github.com/davidbonnet/vite-plugin-module-list/blob/636d790/lib/main.ts#L51)
 
 ___
 
@@ -47,7 +48,7 @@ Plugin options.
 
 #### Defined in
 
-[main.ts:12](https://github.com/davidbonnet/vite-plugin-module-list/blob/88551b1/lib/main.ts#L12)
+[main.ts:12](https://github.com/davidbonnet/vite-plugin-module-list/blob/636d790/lib/main.ts#L12)
 
 ## Functions
 
@@ -69,4 +70,4 @@ A vite plugin that writes a module that dynamically imports modules found in a f
 
 #### Defined in
 
-[main.ts:149](https://github.com/davidbonnet/vite-plugin-module-list/blob/88551b1/lib/main.ts#L149)
+[main.ts:172](https://github.com/davidbonnet/vite-plugin-module-list/blob/636d790/lib/main.ts#L172)
