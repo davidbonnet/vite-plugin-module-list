@@ -1,6 +1,7 @@
 import { readdir, writeFile } from "fs/promises";
 import { dirname, relative, resolve } from "path";
 
+import normalizePath from "normalize-path";
 import { type Options as FormatOptions, format } from "prettier";
 import { type PluginOption } from "vite";
 
@@ -53,6 +54,12 @@ export type Mode =
   | "named-static"
   | "named-static-no-extension";
 
+const { stringify: formatValue } = JSON;
+
+function formatRelativePath(path: string) {
+  return formatValue(`./${normalizePath(path, false)}`);
+}
+
 function generateModuleList(
   filePathList: string[],
   rootPath: string,
@@ -60,7 +67,6 @@ function generateModuleList(
   mode: Mode,
 ) {
   const outputRootPath = dirname(outputPath);
-  const { stringify: formatValue } = JSON;
   switch (mode) {
     case "full-dynamic": {
       const moduleList = `[ ${filePathList
@@ -71,9 +77,8 @@ function generateModuleList(
           );
           return `{ path: ${formatValue(
             filePath,
-          )}, module: () => import(${formatValue(`./${relativeFilePath}`)}) }`;
+          )}, module: () => import(${formatRelativePath(relativeFilePath)}) }`;
         })
-        .filter(Boolean)
         .join(",")} ]`;
       return `// ${COMMENT}\nexport default ${moduleList}`;
     }
@@ -87,9 +92,8 @@ function generateModuleList(
           return `export { ${filePath.slice(
             0,
             filePath.lastIndexOf("."),
-          )} } from ${formatValue(`./${relativeFilePath}`)}`;
+          )} } from ${formatRelativePath(relativeFilePath)}`;
         })
-        .filter(Boolean)
         .join("\n");
       return `// ${COMMENT}\n${moduleList}`;
     }
@@ -104,11 +108,10 @@ function generateModuleList(
             outputRootPath,
             resolve(rootPath, filePathWithoutExtension),
           );
-          return `export { ${filePathWithoutExtension} } from ${formatValue(
-            `./${relativeFilePath}`,
+          return `export { ${filePathWithoutExtension} } from ${formatRelativePath(
+            relativeFilePath,
           )}`;
         })
-        .filter(Boolean)
         .join("\n");
       return `// ${COMMENT}\n${moduleList}`;
     }
