@@ -7,6 +7,7 @@
 - Write a simple JavaScript module that dynamically imports all modules of a specified folder.
 - Automatically updates when files are added, removed, or renamed to the specified folder.
 - Optionally formats the written module using Prettier.
+- Works with Vite 2.x and onward.
 
 ## Installation
 
@@ -24,7 +25,7 @@ import moduleList from "vite-plugin-module-list";
 
 [API documentation](./doc/README.md).
 
-The default exported function returns a regular Vite plugin object.
+The default exported function returns a regular Vite plugin object. It adds hook that sets a file change listener on the Vite development server.
 
 ```js
 import { resolve } from "path";
