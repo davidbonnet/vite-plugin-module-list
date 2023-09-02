@@ -1,6 +1,6 @@
 # Vite plugin: Module list
 
-🧶 Vite plugin that writes a module that dynamically imports modules found in a folder.
+🧶 Vite plugin that generates a module that automatically imports modules of a given folder.
 
 ### Key features
 
