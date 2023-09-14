@@ -25,7 +25,6 @@ export default defineConfig({
       includeExtensions: ["css"],
       outputPath: resolve("src/pages.css"),
       mode: "css-module",
-      formatOptions: false,
     }),
     preact(),
   ],

@@ -175,7 +175,7 @@ async function writeModuleList(
     formatOptions === false
       ? moduleList
       : await format(moduleList, {
-          parser: "meriyah",
+          filepath: outputPath,
           ...formatOptions,
         }),
   );
