@@ -27,7 +27,7 @@ Generation mode:
 
 #### Defined in
 
-[main.ts:53](https://github.com/davidbonnet/vite-plugin-module-list/blob/f11446d/lib/main.ts#L53)
+[main.ts:53](https://github.com/davidbonnet/vite-plugin-module-list/blob/a476348/lib/main.ts#L53)
 
 ___
 
@@ -49,7 +49,7 @@ Plugin options.
 
 #### Defined in
 
-[main.ts:13](https://github.com/davidbonnet/vite-plugin-module-list/blob/f11446d/lib/main.ts#L13)
+[main.ts:13](https://github.com/davidbonnet/vite-plugin-module-list/blob/a476348/lib/main.ts#L13)
 
 ## Functions
 
@@ -71,4 +71,4 @@ A vite plugin that writes a module that dynamically imports modules found in a f
 
 #### Defined in
 
-[main.ts:189](https://github.com/davidbonnet/vite-plugin-module-list/blob/f11446d/lib/main.ts#L189)
+[main.ts:189](https://github.com/davidbonnet/vite-plugin-module-list/blob/a476348/lib/main.ts#L189)
