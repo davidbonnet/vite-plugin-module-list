@@ -48,11 +48,13 @@ export type ModuleListOptions = {
  * - `full-dynamic`: Every found module is listed in an array with a `{ path, module: () => import() }` object description, `module` being a callback that does a dynamic import.
  * - `named-static`: Every found module has a reference of the same module name being re-exported.
  * - `named-static-no-extension`: Same as `named-static` except that imports do not include the file name extension.
+ * - `css-module`: Every found module is imported as a CSS module using the `@import` statement.
  */
 export type Mode =
   | "full-dynamic"
   | "named-static"
-  | "named-static-no-extension";
+  | "named-static-no-extension"
+  | "css-module";
 
 const { stringify: formatValue } = JSON;
 
@@ -114,6 +116,18 @@ function generateModuleList(
         })
         .join("\n");
       return `// ${COMMENT}\n${moduleList}`;
+    }
+    case "css-module": {
+      const moduleList = filePathList
+        .map((filePath) => {
+          const relativeFilePath = relative(
+            outputRootPath,
+            resolve(rootPath, filePath),
+          );
+          return `@import ${formatRelativePath(relativeFilePath)};`;
+        })
+        .join("\n");
+      return `/* ${COMMENT} */\n${moduleList}`;
     }
   }
 }

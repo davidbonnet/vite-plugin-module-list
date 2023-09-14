@@ -20,6 +20,13 @@ export default defineConfig({
       outputPath: resolve("src/icons.ts"),
       mode: "named-static-no-extension",
     }),
+    moduleList({
+      rootPath: resolve("src/pages"),
+      includeExtensions: ["css"],
+      outputPath: resolve("src/pages.css"),
+      mode: "css-module",
+      formatOptions: false,
+    }),
     preact(),
   ],
   clearScreen: false,
