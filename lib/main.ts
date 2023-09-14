@@ -82,7 +82,7 @@ function generateModuleList(
           )}, module: () => import(${formatRelativePath(relativeFilePath)}) }`;
         })
         .join(",")} ]`;
-      return `// ${COMMENT}\nexport default ${moduleList}`;
+      return `// ${COMMENT}\nexport default ${moduleList}\n`;
     }
     case "named-static": {
       const moduleList = filePathList
@@ -97,7 +97,7 @@ function generateModuleList(
           )} } from ${formatRelativePath(relativeFilePath)}`;
         })
         .join("\n");
-      return `// ${COMMENT}\n${moduleList}`;
+      return `// ${COMMENT}\n${moduleList}\n`;
     }
     case "named-static-no-extension": {
       const moduleList = filePathList
@@ -115,7 +115,7 @@ function generateModuleList(
           )}`;
         })
         .join("\n");
-      return `// ${COMMENT}\n${moduleList}`;
+      return `// ${COMMENT}\n${moduleList}\n`;
     }
     case "css-module": {
       const moduleList = filePathList
@@ -127,7 +127,7 @@ function generateModuleList(
           return `@import ${formatRelativePath(relativeFilePath)};`;
         })
         .join("\n");
-      return `/* ${COMMENT} */\n${moduleList}`;
+      return `/* ${COMMENT} */\n${moduleList}\n`;
     }
   }
 }
