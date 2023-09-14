@@ -5,7 +5,8 @@
 ### Key features
 
 - Writes a simple module that imports all modules of a specified folder.
-- Outputs different exports styles (dynamic, static, with or without file extension)
+- Outputs different exports styles (dynamic, static, with or without file extension).
+- Handles JavaScript/TypeScript and CSS modules.
 - Automatically updates when files are added, removed, or renamed to the specified folder.
 - Optionally formats the written module using Prettier.
 - Works with Vite 2.x and onward.
