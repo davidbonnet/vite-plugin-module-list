@@ -25,7 +25,7 @@ import moduleList from "vite-plugin-module-list";
 
 ## API
 
-[API documentation](./doc/README.md).
+Please checkout the [API documentation](./doc/README.md) for a full list of available options.
 
 The default exported function returns a regular Vite plugin object. It adds hook that sets a file change listener on the Vite development server.
 
@@ -57,6 +57,7 @@ src/
   pages/
     A.css
     A.tsx
+    A.test.tsx
     B.css
     B.tsx
     C.tsx
@@ -73,6 +74,8 @@ export default [
   { path: "C.tsx", module: () => import("./pages/C.tsx") },
 ];
 ```
+
+Note that the CSS and test files are excluded. This behavior can be overridden with the `include`, `exclude`, and `includeExtensions` options.
 
 It can then be imported in another module that wraps the dynamic imports with a `lazy` decorator:
 

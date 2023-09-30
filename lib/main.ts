@@ -30,6 +30,18 @@ export type ModuleListOptions = {
    */
   includeExtensions?: string[];
   /**
+   * Regular expression that matches file names to include. Files that do not match will be excluded.
+   *
+   * @defaultValue `/(?:)/`
+   */
+  include?: RegExp;
+  /**
+   * Regular expression that matches file names to exclude. Files that match the `include` regular expression but match the `exclude` regular expression will be excluded.
+   *
+   * @defaultValue `/\.(?:tests?|spec)\.[^.]+$/`
+   */
+  exclude?: RegExp;
+  /**
    * Path to the module into wich the module list is written.
    *
    * @defaultValue `${rootPath}/main.ts`.
@@ -135,6 +147,8 @@ function generateModuleList(
 async function readModuleList(
   rootPath: NonNullable<ModuleListOptions["rootPath"]>,
   includeExtensions: NonNullable<ModuleListOptions["includeExtensions"]>,
+  include: NonNullable<ModuleListOptions["include"]>,
+  exclude: NonNullable<ModuleListOptions["exclude"]>,
   outputPath: NonNullable<ModuleListOptions["outputPath"]>,
 ) {
   return (await readdir(rootPath)).filter((filePath) => {
@@ -149,6 +163,12 @@ async function readModuleList(
     ) {
       return false;
     }
+    if (!include.test(filePath)) {
+      return false;
+    }
+    if (exclude.test(filePath)) {
+      return false;
+    }
     const resolvedFilePath = resolve(rootPath, filePath);
     if (resolvedFilePath === outputPath) {
       return false;
@@ -160,12 +180,20 @@ async function readModuleList(
 async function writeModuleList(
   rootPath: NonNullable<ModuleListOptions["rootPath"]>,
   includeExtensions: NonNullable<ModuleListOptions["includeExtensions"]>,
+  include: NonNullable<ModuleListOptions["include"]>,
+  exclude: NonNullable<ModuleListOptions["exclude"]>,
   outputPath: NonNullable<ModuleListOptions["outputPath"]>,
   formatOptions: ModuleListOptions["formatOptions"] = {},
   mode: NonNullable<ModuleListOptions["mode"]>,
 ) {
   const moduleList = await generateModuleList(
-    await readModuleList(rootPath, includeExtensions, outputPath),
+    await readModuleList(
+      rootPath,
+      includeExtensions,
+      include,
+      exclude,
+      outputPath,
+    ),
     rootPath,
     outputPath,
     mode,
@@ -190,6 +218,8 @@ export default function moduleList({
   mode = "full-dynamic",
   rootPath = ".",
   includeExtensions = ["js", "ts", "jsx", "tsx"],
+  include = /(?:)/,
+  exclude = /\.(?:tests?|spec)\.[^.]+$/,
   outputPath = `${rootPath}/main.ts`,
   formatOptions,
 }: ModuleListOptions): PluginOption {
@@ -200,6 +230,8 @@ export default function moduleList({
       await writeModuleList(
         rootPath,
         includeExtensions,
+        include,
+        exclude,
         outputPath,
         formatOptions,
         mode,
@@ -218,6 +250,8 @@ export default function moduleList({
         await writeModuleList(
           rootPath,
           includeExtensions,
+          include,
+          exclude,
           outputPath,
           formatOptions,
           mode,

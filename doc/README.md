@@ -27,7 +27,7 @@ Generation mode:
 
 #### Defined in
 
-[main.ts:53](https://github.com/davidbonnet/vite-plugin-module-list/blob/a476348/lib/main.ts#L53)
+[main.ts:65](https://github.com/davidbonnet/vite-plugin-module-list/blob/6cf3584/lib/main.ts#L65)
 
 ___
 
@@ -41,7 +41,9 @@ Plugin options.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
+| `exclude?` | `RegExp` | Regular expression that matches file names to exclude. Files that match the `include` regular expression but match the `exclude` regular expression will be excluded. **`Default Value`** `/\.(?:tests?\|spec)\.[^.]+$/` |
 | `formatOptions?` | `FormatOptions` \| ``false`` | Prettier options. If explicitely set to false, the code is not formatted. **`See`** FormatOptions for the list of options. |
+| `include?` | `RegExp` | Regular expression that matches file names to include. Files that do not match will be excluded. **`Default Value`** `/(?:)/` |
 | `includeExtensions?` | `string`[] | Module file name extensions to include. Files with other extensions are ignored. **`Default Value`** `["js", "ts", "jsx", "tsx"]` |
 | `mode?` | [`Mode`](README.md#mode) | Specifies how the modules are listed and exported. **`Default Value`** ```ts "full-dynamic" ``` |
 | `outputPath?` | `string` | Path to the module into wich the module list is written. **`Default Value`** `${rootPath}/main.ts`. |
@@ -49,7 +51,7 @@ Plugin options.
 
 #### Defined in
 
-[main.ts:13](https://github.com/davidbonnet/vite-plugin-module-list/blob/a476348/lib/main.ts#L13)
+[main.ts:13](https://github.com/davidbonnet/vite-plugin-module-list/blob/6cf3584/lib/main.ts#L13)
 
 ## Functions
 
@@ -71,4 +73,4 @@ A vite plugin that writes a module that dynamically imports modules found in a f
 
 #### Defined in
 
-[main.ts:189](https://github.com/davidbonnet/vite-plugin-module-list/blob/a476348/lib/main.ts#L189)
+[main.ts:217](https://github.com/davidbonnet/vite-plugin-module-list/blob/6cf3584/lib/main.ts#L217)
