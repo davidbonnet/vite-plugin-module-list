@@ -9,7 +9,7 @@
 - Handles JavaScript/TypeScript and CSS modules.
 - Automatically updates when files are added, removed, or renamed to the specified folder.
 - Optionally formats the written module using Prettier.
-- Works with Vite 2.x and onward.
+- Works with [Vite](http://vitejs.dev) 2.x and onward.
 
 ## Installation
 
