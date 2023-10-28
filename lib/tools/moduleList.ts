@@ -1,8 +1,10 @@
 import type { PluginOption } from "vite";
-import type { ModuleListOptions } from "../types";
 import { resolve } from "path";
-import { normalizeMode } from "./normalizeMode";
-import { writeModuleList } from "./writeModuleList";
+
+import type { ModuleListOptions } from "../types";
+
+import { normalizeMode } from "./normalizeMode.js";
+import { writeModuleList } from "./writeModuleList.js";
 
 /**
  * Vite plugin that writes a module that imports modules found in a folder.

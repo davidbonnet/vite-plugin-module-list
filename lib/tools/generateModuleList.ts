@@ -1,9 +1,9 @@
 import { basename, dirname, extname, relative, resolve } from "path";
 
-import { COMMENT } from "../constants";
+import { COMMENT } from "../constants.js";
 import type { Mode } from "../types";
-import { formatRelativePath } from "./formatRelativePath";
-import { formatValue } from "./formatValue";
+import { formatRelativePath } from "./formatRelativePath.js";
+import { formatValue } from "./formatValue.js";
 
 export function generateModuleList(
   filePathList: string[],

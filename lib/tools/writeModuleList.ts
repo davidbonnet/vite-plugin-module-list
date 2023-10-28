@@ -1,8 +1,10 @@
 import { writeFile } from "fs/promises";
-import type { Mode, ModuleListOptions } from "../types";
-import { generateModuleList } from "./generateModuleList";
-import { readModuleList } from "./readModuleList";
 import { format } from "prettier";
+
+import type { Mode, ModuleListOptions } from "../types";
+
+import { generateModuleList } from "./generateModuleList.js";
+import { readModuleList } from "./readModuleList.js";
 
 export async function writeModuleList(
   rootPath: NonNullable<ModuleListOptions["rootPath"]>,
