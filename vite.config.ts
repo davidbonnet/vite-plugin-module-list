@@ -7,6 +7,23 @@ import moduleList from "./lib/main";
 
 export default defineConfig({
   plugins: [
+    // Library
+    moduleList({
+      rootPath: resolve("lib/types"),
+      outputPath: resolve("lib/types.ts"),
+      mode: { language: "ts", type: true },
+    }),
+    moduleList({
+      rootPath: resolve("lib/tools"),
+      outputPath: resolve("lib/tools.ts"),
+      mode: { language: "ts", extension: "js" },
+    }),
+    moduleList({
+      rootPath: resolve("lib/constants"),
+      outputPath: resolve("lib/constants.ts"),
+      mode: { language: "ts", extension: "js" },
+    }),
+    // Demo
     moduleList({
       rootPath: resolve("src/pages"),
       outputPath: resolve("src/pages.ts"),

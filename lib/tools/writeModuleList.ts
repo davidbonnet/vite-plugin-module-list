@@ -5,6 +5,7 @@ import type { Mode, ModuleListOptions } from "../types";
 
 import { generateModuleList } from "./generateModuleList.js";
 import { readModuleList } from "./readModuleList.js";
+import { readModule } from "./readModule.js";
 
 export async function writeModuleList(
   rootPath: NonNullable<ModuleListOptions["rootPath"]>,
@@ -27,13 +28,16 @@ export async function writeModuleList(
     outputPath,
     mode,
   );
-  await writeFile(
-    outputPath,
+  const moduleListContent =
     formatOptions === false
       ? moduleList
       : await format(moduleList, {
           filepath: outputPath,
           ...formatOptions,
-        }),
-  );
+        });
+  const previousModuleListContent = await readModule(outputPath);
+  if (moduleListContent === previousModuleListContent) {
+    return;
+  }
+  await writeFile(outputPath, moduleListContent);
 }

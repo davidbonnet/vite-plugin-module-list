@@ -12,8 +12,9 @@ export type ModeTs = {
   dynamic?: true;
   /**
    * Include the module file name extension when importing the module.
+   * Can be set to "js" to use this file extension instead of "ts".
    */
-  extension?: true;
+  extension?: true | "js";
   /**
    * Use the `type` keyword when importing the module.
    */

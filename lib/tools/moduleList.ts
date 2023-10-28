@@ -20,6 +20,7 @@ export function moduleList({
   exclude = /\.(?:tests?|spec)\.[^.]+$/,
   outputPath = `${rootPath}/main.ts`,
   formatOptions,
+  watch = true,
 }: ModuleListOptions): PluginOption {
   const resolvedRootPath = resolve(rootPath);
   const normalizedMode = normalizeMode(mode);
@@ -35,6 +36,9 @@ export function moduleList({
         formatOptions,
         normalizedMode,
       );
+      if (!watch) {
+        return;
+      }
       server.watcher.on("all", async (eventName, filePath) => {
         if (eventName !== "add" && eventName !== "unlink") {
           return;

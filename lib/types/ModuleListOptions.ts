@@ -47,4 +47,10 @@ export type ModuleListOptions = {
    * @see {@link FormatOptions} for the list of options.
    */
   formatOptions?: FormatOptions | false;
+  /**
+   * Whether it should watch for changes or not.
+   *
+   * @defaultValue `true`
+   */
+  watch?: boolean;
 };
