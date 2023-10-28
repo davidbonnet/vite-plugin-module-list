@@ -26,7 +26,7 @@ Generation mode.
 
 #### Defined in
 
-types/Mode.ts:8
+[types/Mode.ts:8](https://github.com/davidbonnet/vite-plugin-module-list/blob/57f0cf5/lib/types/Mode.ts#L8)
 
 ___
 
@@ -44,7 +44,7 @@ CSS mode.
 
 #### Defined in
 
-types/ModeCss.ts:4
+[types/ModeCss.ts:4](https://github.com/davidbonnet/vite-plugin-module-list/blob/57f0cf5/lib/types/ModeCss.ts#L4)
 
 ___
 
@@ -64,7 +64,7 @@ JavaScript mode.
 
 #### Defined in
 
-types/ModeJs.ts:4
+[types/ModeJs.ts:4](https://github.com/davidbonnet/vite-plugin-module-list/blob/57f0cf5/lib/types/ModeJs.ts#L4)
 
 ___
 
@@ -85,7 +85,7 @@ TypeScript mode.
 
 #### Defined in
 
-types/ModeTs.ts:4
+[types/ModeTs.ts:4](https://github.com/davidbonnet/vite-plugin-module-list/blob/57f0cf5/lib/types/ModeTs.ts#L4)
 
 ___
 
@@ -103,13 +103,13 @@ Plugin options.
 | `formatOptions?` | `FormatOptions` \| ``false`` | Prettier options. If explicitely set to false, the code is not formatted. **`See`** FormatOptions for the list of options. |
 | `include?` | `RegExp` | Regular expression that matches file names to include. Files that do not match will be excluded. **`Default Value`** `/(?:)/` |
 | `includeExtensions?` | `string`[] | Module file name extensions to include. Files with other extensions are ignored. **`Default Value`** `["js", "ts", "jsx", "tsx"]` |
-| `mode?` | [`Mode`](README.md#mode) \| [`Mode`](README.md#mode)[``"language"``] | Specifies how the modules are listed and exported. **`Default Value`** ```ts "full-dynamic" ``` |
+| `mode?` | [`Mode`](README.md#mode) \| [`Mode`](README.md#mode)[``"language"``] | Specifies how the modules are listed and exported. **`Default Value`** ```ts "js" ``` |
 | `outputPath?` | `string` | Path to the module into wich the module list is written. **`Default Value`** `${rootPath}/main.ts`. |
 | `rootPath?` | `string` | Path to the folder containing the modules to list. **`Default Value`** `"."` |
 
 #### Defined in
 
-types/ModuleListOptions.ts:7
+[types/ModuleListOptions.ts:7](https://github.com/davidbonnet/vite-plugin-module-list/blob/57f0cf5/lib/types/ModuleListOptions.ts#L7)
 
 ## Functions
 
@@ -133,4 +133,4 @@ A vite plugin that writes a module that imports modules found in a folder.
 
 #### Defined in
 
-tools/moduleList.ts:13
+[tools/moduleList.ts:13](https://github.com/davidbonnet/vite-plugin-module-list/blob/57f0cf5/lib/tools/moduleList.ts#L13)

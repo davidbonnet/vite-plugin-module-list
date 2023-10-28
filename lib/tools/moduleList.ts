@@ -11,7 +11,7 @@ import { writeModuleList } from "./writeModuleList";
  * @returns A vite plugin that writes a module that imports modules found in a folder.
  */
 export function moduleList({
-  mode: currentMode = "js",
+  mode = "js",
   rootPath = ".",
   includeExtensions = ["js", "ts", "jsx", "tsx"],
   include = /(?:)/,
@@ -20,7 +20,7 @@ export function moduleList({
   formatOptions,
 }: ModuleListOptions): PluginOption {
   const resolvedRootPath = resolve(rootPath);
-  const mode = normalizeMode(currentMode);
+  const normalizedMode = normalizeMode(mode);
   return {
     name: "module-list",
     async configureServer(server) {
@@ -31,7 +31,7 @@ export function moduleList({
         exclude,
         outputPath,
         formatOptions,
-        mode,
+        normalizedMode,
       );
       server.watcher.on("all", async (eventName, filePath) => {
         if (eventName !== "add" && eventName !== "unlink") {
@@ -51,7 +51,7 @@ export function moduleList({
           exclude,
           outputPath,
           formatOptions,
-          mode,
+          normalizedMode,
         );
       });
     },

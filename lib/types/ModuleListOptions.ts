@@ -8,7 +8,7 @@ export type ModuleListOptions = {
   /**
    * Specifies how the modules are listed and exported.
    *
-   * @defaultValue "full-dynamic"
+   * @defaultValue "js"
    */
   mode?: Mode | Mode["language"];
   /**
