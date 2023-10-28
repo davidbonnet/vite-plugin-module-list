@@ -13,18 +13,27 @@ export default defineConfig({
       formatOptions: {
         trailingComma: "all",
       },
+      mode: {
+        language: "ts",
+        dynamic: true,
+      },
     }),
     moduleList({
       rootPath: resolve("src/icons"),
       includeExtensions: ["tsx"],
       outputPath: resolve("src/icons.ts"),
-      mode: "named-static-no-extension",
+      mode: "ts",
+    }),
+    moduleList({
+      rootPath: resolve("src/types"),
+      outputPath: resolve("src/types.ts"),
+      mode: { language: "ts", type: true },
     }),
     moduleList({
       rootPath: resolve("src/pages"),
       includeExtensions: ["css"],
       outputPath: resolve("src/pages.css"),
-      mode: "css-module",
+      mode: "css",
     }),
     preact(),
   ],
