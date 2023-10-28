@@ -1,3 +1,3 @@
-export { moduleList as default } from "./tools/moduleList";
+export { moduleList as default } from "./tools/moduleList.js";
 
 export type * from "./types";
