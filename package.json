@@ -13,11 +13,12 @@
   "main": "./dist/main.js",
   "exports": {
     "types": "./dist/main.d.ts",
-    "import": "./dist/main.js"
+    "import": "./dist/main.js",
+    "require": "./dist/cjs/main.js"
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc --project tsconfig.package.json",
+    "build": "rm -rf dist; tsc --project tsconfig.package.json; tsc --project tsconfig.package.cjs.json",
     "build:doc": "typedoc",
     "prepare": "npm run build",
     "test": "tsc"
