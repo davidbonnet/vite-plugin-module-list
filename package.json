@@ -18,7 +18,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "rm -rf dist; tsc --project tsconfig.package.json; tsc --project tsconfig.package.cjs.json",
+    "build": "rm -rf dist; tsc --project tsconfig.package.json; tsc --project tsconfig.package.cjs.json; find dist/cjs -name \"*.js\" -exec sh -c 'sed -i \"\" -E \"s/require\\(\\\"([^\\\"]+)\\.js\\\"\\);/require(\\\"\\1.cjs\\\");/\" $0; mv \"$0\" \"${0%.js}.cjs\"' {} \\;",
     "build:doc": "typedoc",
     "prepare": "npm run build",
     "test": "tsc"
