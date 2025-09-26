@@ -26,6 +26,17 @@ export function moduleList({
   const normalizedMode = normalizeMode(mode);
   return {
     name: "module-list",
+    async config() {
+      await writeModuleList(
+        rootPath,
+        includeExtensions,
+        include,
+        exclude,
+        outputPath,
+        formatOptions,
+        normalizedMode,
+      );
+    },
     async configureServer(server) {
       await writeModuleList(
         rootPath,
