@@ -1,7 +1,7 @@
 {
   "name": "vite-plugin-module-list",
   "private": false,
-  "version": "2.2.3",
+  "version": "2.3.0",
   "description": "Vite plugin that writes a module that dynamically imports modules found in a folder.",
   "author": "David Bonnet <david@bonnet.cc>",
   "license": "MIT",
