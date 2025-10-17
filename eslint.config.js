@@ -10,7 +10,12 @@ import vitestPlugin from "eslint-plugin-vitest";
 /**
  * List of global variables or types.
  */
-const GLOBAL_NAME_LIST = ["process", "console", "MediaQueryListEvent"];
+const GLOBAL_NAME_LIST = [
+  "process",
+  "console",
+  "MediaQueryListEvent",
+  "HTMLElement",
+];
 
 /** @type { import("eslint").Linter.Config[] } */
 export default [
@@ -176,6 +181,14 @@ export default [
     },
     settings: {
       ...importPlugin.configs.typescript.settings,
+    },
+  },
+  {
+    files: ["src/**/*.ts", "src/**/*.tsx"],
+    rules: {
+      "id-length": "off",
+      "import/extensions": "off",
+      "sortkeys/sort-keys-fix": "off",
     },
   },
   {

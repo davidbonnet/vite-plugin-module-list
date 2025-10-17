@@ -1,3 +1,4 @@
+import { getGlobal } from "@nevoland/get-global";
 import { render } from "preact";
 import { Suspense, lazy } from "preact/compat";
 
@@ -41,8 +42,8 @@ function Switch({ path = "/" }) {
 }
 
 export function App() {
-  const { pathname } = window.location;
+  const { pathname } = getGlobal().location!;
   return <Switch path={pathname} />;
 }
 
-render(<App />, document.getElementById("app") as HTMLElement);
+render(<App />, getGlobal().document!.getElementById("app") as HTMLElement);

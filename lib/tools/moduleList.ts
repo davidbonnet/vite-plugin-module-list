@@ -1,5 +1,6 @@
-import type { PluginOption } from "vite";
 import { resolve } from "path";
+
+import type { PluginOption } from "vite";
 
 import type { ModuleListOptions } from "../types";
 
@@ -26,7 +27,6 @@ export function moduleList({
   const resolvedRootPath = resolve(rootPath);
   const normalizedMode = normalizeMode(mode);
   return {
-    name: "module-list",
     async config() {
       await writeModuleList(
         rootPath,
@@ -76,5 +76,6 @@ export function moduleList({
         );
       });
     },
+    name: "module-list",
   };
 }

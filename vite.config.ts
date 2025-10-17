@@ -23,53 +23,52 @@ export default defineConfig({
   plugins: [
     // Library
     moduleList({
-      rootPath: resolve("lib/types"),
-      outputPath: resolve("lib/types.ts"),
       mode: { language: "ts", type: true },
+      outputPath: resolve("lib/types.ts"),
+      rootPath: resolve("lib/types"),
     }),
     moduleList({
-      rootPath: resolve("lib/tools"),
+      mode: { extension: "js", language: "ts" },
       outputPath: resolve("lib/tools.ts"),
-      mode: { language: "ts", extension: "js" },
+      rootPath: resolve("lib/tools"),
     }),
     moduleList({
-      rootPath: resolve("lib/constants"),
+      mode: { extension: "js", language: "ts" },
       outputPath: resolve("lib/constants.ts"),
-      mode: { language: "ts", extension: "js" },
+      rootPath: resolve("lib/constants"),
     }),
     // Demo
     moduleList({
-      rootPath: resolve("src/pages"),
-      outputPath: resolve("src/pages.ts"),
       formatOptions: {
         trailingComma: "all",
       },
-      recursive: true,
       mode: {
-        language: "ts",
         dynamic: true,
+        language: "ts",
       },
-    }),
-    moduleList({
-      rootPath: resolve("src/icons"),
-      includeExtensions: ["tsx"],
-      outputPath: resolve("src/icons.ts"),
-      mode: "ts",
-    }),
-    moduleList({
-      rootPath: resolve("src/types"),
-      outputPath: resolve("src/types.ts"),
-      mode: { language: "ts", type: true },
-    }),
-    moduleList({
+      outputPath: resolve("src/pages.ts"),
+      recursive: true,
       rootPath: resolve("src/pages"),
+    }),
+    moduleList({
+      includeExtensions: ["tsx"],
+      mode: "ts",
+      outputPath: resolve("src/icons.ts"),
+      rootPath: resolve("src/icons"),
+    }),
+    moduleList({
+      mode: { language: "ts", type: true },
+      outputPath: resolve("src/types.ts"),
+      rootPath: resolve("src/types"),
+    }),
+    moduleList({
       includeExtensions: ["css"],
-      outputPath: resolve("src/pages.css"),
       mode: "css",
+      outputPath: resolve("src/pages.css"),
+      rootPath: resolve("src/pages"),
     }),
     preact(),
   ],
   publicDir: "src/public",
   root: ".",
-  build: {},
 });

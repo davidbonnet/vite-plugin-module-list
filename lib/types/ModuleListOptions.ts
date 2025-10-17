@@ -1,4 +1,5 @@
 import { type Options as FormatOptions } from "prettier";
+
 import type { Mode } from "./Mode";
 
 /**

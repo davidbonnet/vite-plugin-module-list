@@ -2,9 +2,10 @@ import { dirname, relative, resolve } from "path";
 
 import { COMMENT } from "../constants.js";
 import type { Mode } from "../types";
+
+import { formatFilePathExtension } from "./formatFilePathExtension.js";
 import { formatRelativePath } from "./formatRelativePath.js";
 import { formatValue } from "./formatValue.js";
-import { formatFilePathExtension } from "./formatFilePathExtension.js";
 import { identifierFromFilePath } from "./identifierFromFilePath.js";
 
 export function generateModuleList(

@@ -1,5 +1,5 @@
 import { readdir } from "fs/promises";
-import { resolve, join, extname } from "path";
+import { extname, join, resolve } from "path";
 
 import type { ModuleListOptions } from "../types";
 
