@@ -21,6 +21,7 @@ export function moduleList({
   outputPath = `${rootPath}/main.ts`,
   formatOptions,
   watch = true,
+  recursive = false,
 }: ModuleListOptions): PluginOption {
   const resolvedRootPath = resolve(rootPath);
   const normalizedMode = normalizeMode(mode);
@@ -35,6 +36,7 @@ export function moduleList({
         outputPath,
         formatOptions,
         normalizedMode,
+        recursive,
       );
     },
     async configureServer(server) {
@@ -46,6 +48,7 @@ export function moduleList({
         outputPath,
         formatOptions,
         normalizedMode,
+        recursive,
       );
       if (!watch) {
         return;
@@ -69,6 +72,7 @@ export function moduleList({
           outputPath,
           formatOptions,
           normalizedMode,
+          recursive,
         );
       });
     },

@@ -15,6 +15,7 @@ export async function writeModuleList(
   outputPath: NonNullable<ModuleListOptions["outputPath"]>,
   formatOptions: ModuleListOptions["formatOptions"] = {},
   mode: Mode,
+  recursive: boolean = false,
 ) {
   const moduleList = generateModuleList(
     await readModuleList(
@@ -23,6 +24,7 @@ export async function writeModuleList(
       include,
       exclude,
       outputPath,
+      recursive,
     ),
     rootPath,
     outputPath,

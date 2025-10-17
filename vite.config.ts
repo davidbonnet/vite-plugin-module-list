@@ -30,6 +30,7 @@ export default defineConfig({
       formatOptions: {
         trailingComma: "all",
       },
+      recursive: true,
       mode: {
         language: "ts",
         dynamic: true,

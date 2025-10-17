@@ -3,6 +3,7 @@ export { formatFilePathExtension } from "./tools/formatFilePathExtension.js";
 export { formatRelativePath } from "./tools/formatRelativePath.js";
 export { formatValue } from "./tools/formatValue.js";
 export { generateModuleList } from "./tools/generateModuleList.js";
+export { identifierFromFilePath } from "./tools/identifierFromFilePath.js";
 export { moduleList } from "./tools/moduleList.js";
 export { normalizeMode } from "./tools/normalizeMode.js";
 export { readModule } from "./tools/readModule.js";

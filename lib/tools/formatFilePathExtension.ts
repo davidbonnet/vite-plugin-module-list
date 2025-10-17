@@ -1,4 +1,4 @@
-import { basename, extname } from "path";
+import { extname } from "path";
 
 export function formatFilePathExtension(
   filePath: string,
@@ -7,7 +7,11 @@ export function formatFilePathExtension(
   if (extension === true) {
     return filePath;
   }
-  const filePathWithoutExtension = basename(filePath, extname(filePath));
+  // const currentExtension = filePath.slice(filePath.lastIndexOf("."));
+  const currentExtension = extname(filePath);
+  const filePathWithoutExtension = !currentExtension
+    ? filePath
+    : filePath.slice(0, -currentExtension.length);
   if (!extension) {
     return filePathWithoutExtension;
   }

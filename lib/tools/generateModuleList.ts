@@ -5,9 +5,10 @@ import type { Mode } from "../types";
 import { formatRelativePath } from "./formatRelativePath.js";
 import { formatValue } from "./formatValue.js";
 import { formatFilePathExtension } from "./formatFilePathExtension.js";
+import { identifierFromFilePath } from "./identifierFromFilePath.js";
 
 export function generateModuleList(
-  filePathList: string[],
+  filePathList: readonly string[],
   rootPath: string,
   outputPath: string,
   mode: Mode,
@@ -46,7 +47,7 @@ export function generateModuleList(
           );
           return `export${
             mode.language === "ts" && mode.type ? " type" : ""
-          } { ${formatFilePathExtension(filePath)} } from ${formatRelativePath(
+          } { ${identifierFromFilePath(filePath)} } from ${formatRelativePath(
             relativeFilePath,
           )}`;
         })

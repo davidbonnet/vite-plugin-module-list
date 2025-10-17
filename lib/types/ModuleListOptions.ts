@@ -53,4 +53,10 @@ export type ModuleListOptions = {
    * @defaultValue `true`
    */
   watch?: boolean;
+  /**
+   * Whether to read the directory recursively or not.
+   *
+   * @defaultValue `false`
+   */
+  recursive?: boolean;
 };
