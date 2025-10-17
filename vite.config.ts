@@ -1,11 +1,25 @@
-import { resolve } from "path";
+import { resolve } from "node:path";
 
 import preact from "@preact/preset-vite";
 import { defineConfig } from "vite";
-
-import moduleList from "./lib/main";
+import moduleList from "vite-plugin-module-list";
 
 export default defineConfig({
+  base: "/",
+  build: {
+    emptyOutDir: true,
+    outDir: resolve("public"),
+    reportCompressedSize: false,
+    rollupOptions: {
+      output: {
+        assetFileNames: "[hash].[ext]",
+        chunkFileNames: "[hash].js",
+        entryFileNames: "[hash].js",
+      },
+    },
+    sourcemap: true,
+  },
+  clearScreen: false,
   plugins: [
     // Library
     moduleList({
@@ -55,7 +69,7 @@ export default defineConfig({
     }),
     preact(),
   ],
-  clearScreen: false,
+  publicDir: "src/public",
   root: ".",
   build: {},
 });

@@ -1,6 +1,8 @@
 dist/
+public/
+src/client/public/
+doc/
 node_modules/
-.vscode/
-.husky/
 .cache/
+.vscode/
 .nova/
