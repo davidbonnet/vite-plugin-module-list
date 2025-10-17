@@ -26,7 +26,7 @@ Generation mode.
 
 #### Defined in
 
-[types/Mode.ts:8](https://github.com/davidbonnet/vite-plugin-module-list/blob/57f0cf5/lib/types/Mode.ts#L8)
+[types/Mode.ts:8](https://github.com/davidbonnet/vite-plugin-module-list/blob/59e018d/lib/types/Mode.ts#L8)
 
 ___
 
@@ -44,7 +44,7 @@ CSS mode.
 
 #### Defined in
 
-[types/ModeCss.ts:4](https://github.com/davidbonnet/vite-plugin-module-list/blob/57f0cf5/lib/types/ModeCss.ts#L4)
+[types/ModeCss.ts:4](https://github.com/davidbonnet/vite-plugin-module-list/blob/59e018d/lib/types/ModeCss.ts#L4)
 
 ___
 
@@ -64,7 +64,7 @@ JavaScript mode.
 
 #### Defined in
 
-[types/ModeJs.ts:4](https://github.com/davidbonnet/vite-plugin-module-list/blob/57f0cf5/lib/types/ModeJs.ts#L4)
+[types/ModeJs.ts:4](https://github.com/davidbonnet/vite-plugin-module-list/blob/59e018d/lib/types/ModeJs.ts#L4)
 
 ___
 
@@ -79,13 +79,13 @@ TypeScript mode.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `dynamic?` | ``true`` | Generate a module that dynamically imports the module. |
-| `extension?` | ``true`` | Include the module file name extension when importing the module. |
+| `extension?` | ``true`` \| ``"js"`` | Include the module file name extension when importing the module. Can be set to "js" to use this file extension instead of "ts". |
 | `language` | ``"ts"`` | Generate a TypeScript module. |
 | `type?` | ``true`` | Use the `type` keyword when importing the module. |
 
 #### Defined in
 
-[types/ModeTs.ts:4](https://github.com/davidbonnet/vite-plugin-module-list/blob/57f0cf5/lib/types/ModeTs.ts#L4)
+[types/ModeTs.ts:4](https://github.com/davidbonnet/vite-plugin-module-list/blob/59e018d/lib/types/ModeTs.ts#L4)
 
 ___
 
@@ -105,11 +105,13 @@ Plugin options.
 | `includeExtensions?` | `string`[] | Module file name extensions to include. Files with other extensions are ignored. **`Default Value`** `["js", "ts", "jsx", "tsx"]` |
 | `mode?` | [`Mode`](README.md#mode) \| [`Mode`](README.md#mode)[``"language"``] | Specifies how the modules are listed and exported. **`Default Value`** ```ts "js" ``` |
 | `outputPath?` | `string` | Path to the module into wich the module list is written. **`Default Value`** `${rootPath}/main.ts`. |
+| `recursive?` | `boolean` | Whether to read the directory recursively or not. **`Default Value`** `false` |
 | `rootPath?` | `string` | Path to the folder containing the modules to list. **`Default Value`** `"."` |
+| `watch?` | `boolean` | Whether it should watch for changes or not. **`Default Value`** `true` |
 
 #### Defined in
 
-[types/ModuleListOptions.ts:7](https://github.com/davidbonnet/vite-plugin-module-list/blob/57f0cf5/lib/types/ModuleListOptions.ts#L7)
+[types/ModuleListOptions.ts:7](https://github.com/davidbonnet/vite-plugin-module-list/blob/59e018d/lib/types/ModuleListOptions.ts#L7)
 
 ## Functions
 
@@ -133,4 +135,4 @@ A vite plugin that writes a module that imports modules found in a folder.
 
 #### Defined in
 
-[tools/moduleList.ts:13](https://github.com/davidbonnet/vite-plugin-module-list/blob/57f0cf5/lib/tools/moduleList.ts#L13)
+[tools/moduleList.ts:15](https://github.com/davidbonnet/vite-plugin-module-list/blob/59e018d/lib/tools/moduleList.ts#L15)
