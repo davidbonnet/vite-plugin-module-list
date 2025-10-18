@@ -1,8 +1,8 @@
 import { resolve } from "node:path";
 
 import preact from "@preact/preset-vite";
-import { defineConfig } from "vite";
 import moduleList from "vite-plugin-module-list";
+import { defineConfig } from "vitest/config";
 
 export default defineConfig({
   base: "/",
@@ -71,4 +71,7 @@ export default defineConfig({
   ],
   publicDir: "src/public",
   root: ".",
+  test: {
+    exclude: ["node_modules/**", "src/**"],
+  },
 });

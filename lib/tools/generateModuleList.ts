@@ -19,7 +19,7 @@ export function generateModuleList(
     case "ts":
     case "js": {
       if (mode.dynamic) {
-        const moduleList = `[ ${filePathList
+        const moduleList = `[\n${filePathList
           .map((filePath) => {
             const relativeFilePath = relative(
               outputRootPath,
@@ -28,14 +28,14 @@ export function generateModuleList(
                 formatFilePathExtension(filePath, mode.extension),
               ),
             );
-            return `{ path: ${formatValue(
-              filePath,
+            return `  { path: ${formatValue(
+              relativeFilePath,
             )}, module: () => import(${formatRelativePath(
               relativeFilePath,
             )}) }`;
           })
-          .join(",")} ]`;
-        return `// ${COMMENT}\nexport default ${moduleList}\n`;
+          .join(",\n")}\n]`;
+        return `// ${COMMENT}\nexport default ${moduleList};\n`;
       }
       const moduleList = filePathList
         .map((filePath) => {
