@@ -22,7 +22,7 @@
     "start": "node --env-file-if-exists=.env --env-file-if-exists=${ENV_PATH:-.env} --experimental-strip-types --disable-warning=ExperimentalWarning src/server/main.ts",
     "dev:test": "vitest --update --root=./",
     "test": "npm run lint && npm run format && vitest run --root=./",
-    "build:lib": "rm -rf dist; tsc --project tsconfig.package.json",
+    "build:lib": "rm -rf dist; tsc --project tsconfig.package.json; tsc --project tsconfig.package.cjs.json; find dist/cjs -name \"*.js\" -exec sh -c 'sed -i \"\" -E \"s/require\\(\\\"([^\\\"]+)\\.js\\\"\\);/require(\\\"\\1.cjs\\\");/\" $0; mv \"$0\" \"${0%.js}.cjs\"' {} \\;",
     "build:doc": "typedoc --tsconfig tsconfig.package.json",
     "build:doc:save": "typedoc --tsconfig tsconfig.package.json && git add -A && git commit -a -m 'Update doc'",
     "build:app": "vite build",
