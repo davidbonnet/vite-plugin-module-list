@@ -51,6 +51,16 @@ export default defineConfig({
 });
 ```
 
+## CLI
+
+A command line tool named `vite-plugin-module-list` runs the vite-plugin-module-list plugin instances defined in a Vite configuration file to generate module lists without running a full Vite build:
+
+```bash
+npx vite-plugin-module-list
+```
+
+Run `npx vite-plugin-module-list --help` for more information.
+
 ## Example
 
 ### Dynamic import

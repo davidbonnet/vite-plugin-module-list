@@ -2,7 +2,7 @@ import { getGlobal } from "@nevoland/get-global";
 import { render } from "preact";
 import { Suspense, lazy } from "preact/compat";
 
-import MODULE_LIST from "./pages";
+import MODULE_LIST from "./pages.js";
 
 const PAGE_LIST = MODULE_LIST.map(({ path, module }) => {
   const name = path.slice(0, -4);
