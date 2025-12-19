@@ -71,7 +71,7 @@ Options:
       ) ?? [];
 
     // eslint-disable-next-line no-console
-    console.log(`Running ${pluginList.length} module-list plugin instances.`);
+    console.log(`Running ${pluginList.length} plugin instances.`);
 
     for (const plugin of pluginList) {
       await (plugin as any).config();
