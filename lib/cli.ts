@@ -6,6 +6,7 @@ import { loadConfigFromFile } from "vite";
 type Options = {
   config?: string;
   help?: boolean;
+  plugin?: string | readonly string[];
 };
 
 /**
@@ -18,9 +19,10 @@ async function main(argv: string[]) {
       alias: {
         c: "config",
         h: "help",
+        p: "plugin",
       },
       boolean: ["help"],
-      string: ["config"],
+      string: ["config", "plugin"],
     });
 
     if (options.help) {
@@ -30,12 +32,24 @@ Usage: vite-plugin-module-list [options]
 
 Runs the vite-plugin-module-list plugin instances defined in a Vite configuration file to generate module lists without running a full Vite build.
 
+If additional plugin names are provided via '--plugin', also runs the specified plugin instances' 'config' method.
+
 Options:
   -c, --config <path>   Optional path to the Vite configuration file.
   -h, --help            Show this help message.
+  -p, --plugin <name>   Optional name of specific plugin instances to run.
       `);
-      process.exit(0);
+      return;
     }
+
+    const pluginNameList: readonly string[] = [
+      "module-list",
+      ...(options.plugin
+        ? Array.isArray(options.plugin)
+          ? options.plugin
+          : [options.plugin]
+        : []),
+    ];
 
     const { path, config } =
       (await loadConfigFromFile(
@@ -52,7 +66,8 @@ Options:
 
     const pluginList =
       config.plugins?.filter(
-        (plugin) => plugin && "name" in plugin && plugin.name === "module-list",
+        (plugin) =>
+          plugin && "name" in plugin && pluginNameList.includes(plugin.name),
       ) ?? [];
 
     // eslint-disable-next-line no-console
