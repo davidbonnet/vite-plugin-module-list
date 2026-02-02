@@ -26,7 +26,6 @@ async function main(argv: string[]) {
     });
 
     if (options.help) {
-      // eslint-disable-next-line no-console
       console.log(`
 Usage: vite-plugin-module-list [options]
 
@@ -61,7 +60,6 @@ Options:
       throw new Error("Failed to load Vite configuration.");
     }
 
-    // eslint-disable-next-line no-console
     console.log(`Using configuration file ${path}`);
 
     const pluginList =
@@ -70,7 +68,6 @@ Options:
           plugin && "name" in plugin && pluginNameList.includes(plugin.name),
       ) ?? [];
 
-    // eslint-disable-next-line no-console
     console.log(`Running ${pluginList.length} plugin instances.`);
 
     for (const plugin of pluginList) {

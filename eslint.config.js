@@ -184,6 +184,12 @@ export default [
     },
   },
   {
+    files: ["lib/cli.ts"],
+    rules: {
+      "no-console": "off",
+    },
+  },
+  {
     files: ["src/**/*.ts", "src/**/*.tsx"],
     rules: {
       "id-length": "off",
@@ -193,6 +199,7 @@ export default [
   },
   {
     files: ["**/*.test.ts", "**/*.test.tsx"],
+    ignores: ["dist/**/*", "public/**/*", "node_modules/**/*"],
     plugins: {
       vitest: vitestPlugin,
     },
