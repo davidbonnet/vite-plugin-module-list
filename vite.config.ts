@@ -1,8 +1,9 @@
 import { resolve } from "node:path";
 
 import preact from "@preact/preset-vite";
-import moduleList from "vite-plugin-module-list";
 import { defineConfig } from "vitest/config";
+
+import moduleList from "./lib/main.ts";
 
 export default defineConfig({
   base: "/",
