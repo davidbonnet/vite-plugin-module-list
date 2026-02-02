@@ -73,6 +73,6 @@ export default defineConfig({
   publicDir: "src/public",
   root: ".",
   test: {
-    exclude: ["node_modules/**", "src/**"],
+    exclude: ["node_modules/**", "src/**", "dist/**"],
   },
 });
