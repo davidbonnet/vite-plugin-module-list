@@ -8,7 +8,7 @@
 
 > **default**(`options`): `PluginOption`
 
-Defined in: [tools/moduleList.ts:16](https://github.com/davidbonnet/vite-plugin-module-list/blob/e4be6ce9f04cb8e5198072904b7bfd824c61c467/lib/tools/moduleList.ts#L16)
+Defined in: [tools/moduleList.ts:16](https://github.com/davidbonnet/vite-plugin-module-list/blob/23ef4e72563d0c3b12f87221816734f16a638eff/lib/tools/moduleList.ts#L16)
 
 Vite plugin that writes a module that imports modules found in a folder.
 

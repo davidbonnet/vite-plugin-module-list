@@ -8,7 +8,7 @@
 
 > **ModeCss** = `object`
 
-Defined in: [types/ModeCss.ts:4](https://github.com/davidbonnet/vite-plugin-module-list/blob/e4be6ce9f04cb8e5198072904b7bfd824c61c467/lib/types/ModeCss.ts#L4)
+Defined in: [types/ModeCss.ts:4](https://github.com/davidbonnet/vite-plugin-module-list/blob/23ef4e72563d0c3b12f87221816734f16a638eff/lib/types/ModeCss.ts#L4)
 
 CSS mode.
 
@@ -18,6 +18,6 @@ CSS mode.
 
 > **language**: `"css"`
 
-Defined in: [types/ModeCss.ts:8](https://github.com/davidbonnet/vite-plugin-module-list/blob/e4be6ce9f04cb8e5198072904b7bfd824c61c467/lib/types/ModeCss.ts#L8)
+Defined in: [types/ModeCss.ts:8](https://github.com/davidbonnet/vite-plugin-module-list/blob/23ef4e72563d0c3b12f87221816734f16a638eff/lib/types/ModeCss.ts#L8)
 
 Generate a CSS module.

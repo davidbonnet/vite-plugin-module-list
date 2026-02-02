@@ -8,7 +8,7 @@
 
 > **ModeTs** = `object`
 
-Defined in: [types/ModeTs.ts:4](https://github.com/davidbonnet/vite-plugin-module-list/blob/e4be6ce9f04cb8e5198072904b7bfd824c61c467/lib/types/ModeTs.ts#L4)
+Defined in: [types/ModeTs.ts:4](https://github.com/davidbonnet/vite-plugin-module-list/blob/23ef4e72563d0c3b12f87221816734f16a638eff/lib/types/ModeTs.ts#L4)
 
 TypeScript mode.
 
@@ -18,7 +18,7 @@ TypeScript mode.
 
 > `optional` **dynamic**: `true`
 
-Defined in: [types/ModeTs.ts:12](https://github.com/davidbonnet/vite-plugin-module-list/blob/e4be6ce9f04cb8e5198072904b7bfd824c61c467/lib/types/ModeTs.ts#L12)
+Defined in: [types/ModeTs.ts:12](https://github.com/davidbonnet/vite-plugin-module-list/blob/23ef4e72563d0c3b12f87221816734f16a638eff/lib/types/ModeTs.ts#L12)
 
 Generate a module that dynamically imports the module.
 
@@ -28,7 +28,7 @@ Generate a module that dynamically imports the module.
 
 > `optional` **extension**: `true` \| `"js"`
 
-Defined in: [types/ModeTs.ts:17](https://github.com/davidbonnet/vite-plugin-module-list/blob/e4be6ce9f04cb8e5198072904b7bfd824c61c467/lib/types/ModeTs.ts#L17)
+Defined in: [types/ModeTs.ts:17](https://github.com/davidbonnet/vite-plugin-module-list/blob/23ef4e72563d0c3b12f87221816734f16a638eff/lib/types/ModeTs.ts#L17)
 
 Include the module file name extension when importing the module.
 Can be set to "js" to use this file extension instead of "ts".
@@ -39,7 +39,7 @@ Can be set to "js" to use this file extension instead of "ts".
 
 > **language**: `"ts"`
 
-Defined in: [types/ModeTs.ts:8](https://github.com/davidbonnet/vite-plugin-module-list/blob/e4be6ce9f04cb8e5198072904b7bfd824c61c467/lib/types/ModeTs.ts#L8)
+Defined in: [types/ModeTs.ts:8](https://github.com/davidbonnet/vite-plugin-module-list/blob/23ef4e72563d0c3b12f87221816734f16a638eff/lib/types/ModeTs.ts#L8)
 
 Generate a TypeScript module.
 
@@ -49,6 +49,6 @@ Generate a TypeScript module.
 
 > `optional` **type**: `true`
 
-Defined in: [types/ModeTs.ts:21](https://github.com/davidbonnet/vite-plugin-module-list/blob/e4be6ce9f04cb8e5198072904b7bfd824c61c467/lib/types/ModeTs.ts#L21)
+Defined in: [types/ModeTs.ts:21](https://github.com/davidbonnet/vite-plugin-module-list/blob/23ef4e72563d0c3b12f87221816734f16a638eff/lib/types/ModeTs.ts#L21)
 
 Use the `type` keyword when importing the module.

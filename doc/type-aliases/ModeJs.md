@@ -8,7 +8,7 @@
 
 > **ModeJs** = `object`
 
-Defined in: [types/ModeJs.ts:4](https://github.com/davidbonnet/vite-plugin-module-list/blob/e4be6ce9f04cb8e5198072904b7bfd824c61c467/lib/types/ModeJs.ts#L4)
+Defined in: [types/ModeJs.ts:4](https://github.com/davidbonnet/vite-plugin-module-list/blob/23ef4e72563d0c3b12f87221816734f16a638eff/lib/types/ModeJs.ts#L4)
 
 JavaScript mode.
 
@@ -18,7 +18,7 @@ JavaScript mode.
 
 > `optional` **dynamic**: `true`
 
-Defined in: [types/ModeJs.ts:12](https://github.com/davidbonnet/vite-plugin-module-list/blob/e4be6ce9f04cb8e5198072904b7bfd824c61c467/lib/types/ModeJs.ts#L12)
+Defined in: [types/ModeJs.ts:12](https://github.com/davidbonnet/vite-plugin-module-list/blob/23ef4e72563d0c3b12f87221816734f16a638eff/lib/types/ModeJs.ts#L12)
 
 Generate a module that dynamically imports the module.
 
@@ -28,7 +28,7 @@ Generate a module that dynamically imports the module.
 
 > `optional` **extension**: `true`
 
-Defined in: [types/ModeJs.ts:16](https://github.com/davidbonnet/vite-plugin-module-list/blob/e4be6ce9f04cb8e5198072904b7bfd824c61c467/lib/types/ModeJs.ts#L16)
+Defined in: [types/ModeJs.ts:16](https://github.com/davidbonnet/vite-plugin-module-list/blob/23ef4e72563d0c3b12f87221816734f16a638eff/lib/types/ModeJs.ts#L16)
 
 Include the module file name extension when importing the module.
 
@@ -38,6 +38,6 @@ Include the module file name extension when importing the module.
 
 > **language**: `"js"`
 
-Defined in: [types/ModeJs.ts:8](https://github.com/davidbonnet/vite-plugin-module-list/blob/e4be6ce9f04cb8e5198072904b7bfd824c61c467/lib/types/ModeJs.ts#L8)
+Defined in: [types/ModeJs.ts:8](https://github.com/davidbonnet/vite-plugin-module-list/blob/23ef4e72563d0c3b12f87221816734f16a638eff/lib/types/ModeJs.ts#L8)
 
 Generate a JavaScript module.
