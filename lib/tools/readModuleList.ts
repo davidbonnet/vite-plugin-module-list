@@ -16,7 +16,7 @@ export async function readModuleList(
       if (!file.isFile()) {
         return result;
       }
-      const filePath = join(file.path, file.name);
+      const filePath = join(file.parentPath, file.name);
       const extension = extname(filePath).slice(1);
       if (
         !includeExtensions.some(
