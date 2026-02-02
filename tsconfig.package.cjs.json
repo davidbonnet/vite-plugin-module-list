@@ -11,5 +11,6 @@
     "esModuleInterop": true
   },
   "include": ["lib"],
+  "exclude": ["**/*.test.ts", "**/*.test.tsx"],
   "extends": "./tsconfig.json"
 }
